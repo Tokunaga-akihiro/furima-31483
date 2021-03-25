@@ -8,27 +8,27 @@
 ｜encrypted_password|integer|null: false,|
 ｜last_name         |string |null: false,|
 ｜first_name        |string |null: false,|
-｜last_name(kana)   |string |null: false,|
-｜first_name(kana)  |string |null: false,|
-｜birthday          |string |null: false,|
+｜last_name_kana    |string |null: false,|
+｜first_name_kana   |string |null: false,|
+｜birthday          |date   |null: false,|
 
 ## Association
 - has_many :items
 - has_many :purchase_records
 
 ## items テーブル
-|Column              |type      |options          |
-|-------------------------------------------------|
-|seller              |string    |null: false,     |
-|category            |integer   |null: false,     |
-|status              |integer   |null: false,     |
-|delivery fee        |integer   |null: false,     |
-|shipping area       |integer   |null: false,     |
-|ship date           |integer   |null: false,     |
-|price               |integer   |null: false,     |
-|description of item |text      |null: false,     |
-|product name        |string    |null: false,     |
-|user_id             |references|foreign_key: true|
+|Column              |type      |options             |
+|----------------------------------------------------|
+|seller                 |string    |null: false,     |
+|category_id            |integer   |null: false,     |
+|status_id              |integer   |null: false,     |
+|delivery_fee_id        |integer   |null: false,     |
+|shipping_area_id       |integer   |null: false,     |
+|ship_date_id           |integer   |null: false,     |
+|price                  |integer   |null: false,     |
+|description            |text      |null: false,     |
+|product_name           |string    |null: false,     |
+|user                   |references|foreign_key: true|
 
 ## Association
 - belongs_to :user
@@ -37,12 +37,12 @@
 ## profiles テーブル
 |Column            |type      |options          |
 |-----------------------------------------------|
-|postal code       |string    |null: false      |
+|postal_code       |string    |null: false      |
 |prefectures       |integer   |null: false      |
 |municipality      |string    |null: false      |
 |address           |string    |null: false      |
-|building name     |string    |                 |
-|phone number      |integer   |null: false      |
+|building_name     |string    |                 |
+|phone_number      |integer   |null: false      |
 |purchase record_id|references|foreign_key: true|
 
 ## Association
