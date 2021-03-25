@@ -43,7 +43,7 @@
 |address           |string    |null: false      |
 |building_name     |string    |                 |
 |phone_number      |integer   |null: false      |
-|purchase record_id|references|foreign_key: true|
+|purchase_record_id|references|foreign_key: true|
 
 ## Association
 - belongs_to :purchase_record
