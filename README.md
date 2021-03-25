@@ -5,7 +5,7 @@
 ｜---------------------------------------|
 ｜nickname          |string |null: false,|
 ｜email             |string |null: false,|
-｜encrypted_password|integer|null: false,|
+｜encrypted_password|string |null: false,|
 ｜last_name         |string |null: false,|
 ｜first_name        |string |null: false,|
 ｜last_name_kana    |string |null: false,|
@@ -17,9 +17,8 @@
 - has_many :purchase_records
 
 ## items テーブル
-|Column              |type      |options             |
+|Column                 |type      |options          |
 |----------------------------------------------------|
-|seller                 |string    |null: false,     |
 |category_id            |integer   |null: false,     |
 |status_id              |integer   |null: false,     |
 |delivery_fee_id        |integer   |null: false,     |
@@ -38,12 +37,12 @@
 |Column            |type      |options          |
 |-----------------------------------------------|
 |postal_code       |string    |null: false      |
-|prefectures       |integer   |null: false      |
+|shipping_area_id  |integer   |null: false      |
 |municipality      |string    |null: false      |
 |address           |string    |null: false      |
 |building_name     |string    |                 |
 |phone_number      |integer   |null: false      |
-|purchase_record_id|references|foreign_key: true|
+|purchase_record   |references|foreign_key: true|
 
 ## Association
 - belongs_to :purchase_record
@@ -51,9 +50,10 @@
 ## purchase_records テーブル
 |Column |type      |options          |
 |-------|----------|-----------------|
-|user_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
+|user   |references|foreign_key: true|
+|item   |references|foreign_key: true|
 
 ## Association
 - belongs_to :user
 - belongs_to :item
+- has_one :profile
