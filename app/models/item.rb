@@ -11,6 +11,8 @@ class Item < ApplicationRecord
   validates :category_id, numericality: { other_than: 1 }
   validates :shipping_area_id, numericality: { other_than: 0 }
   validates :status_id, numericality: { other_than: 1 }
+  validates :delivery_fee_id, numericality: { other_than: 1 }
+  validates :ship_date_id, numericality: { other_than: 1 }
 
   with_options presence: true do
   validates  :image
