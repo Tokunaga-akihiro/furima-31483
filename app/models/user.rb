@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   PASSWORD_TERMS = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
   validates_format_of :password, with: PASSWORD_TERMS
-
+  has_many :items
   with_options presence: true do
     validates :nickname
     validates :birthday
