@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
+before_action :authenticate_user!, only:[:order, :index]
 before_action :order_item, :order_user
+before_action :different
+before_action :sold_out
   def  index
     # @item = Item.new
      @order = Order.new
@@ -30,6 +33,18 @@ before_action :order_item, :order_user
     end
 
     def order_user
-      @user = current_user.id
+        @user = current_user.id
     end
+
+    def different
+      if  @item.user_id == current_user.id
+            redirect_to root_path
+      end
+    end
+
+    def sold_out
+      if  @item.purchase_record.present?
+        redirect_to root_path
+    end
+  end
 end
