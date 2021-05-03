@@ -1,6 +1,6 @@
 class Order
   include ActiveModel::Model
-  attr_accessor :postal_code, :shipping_area_id, :municipality, :address, :building_name, :phone_number, :item_id, :user_id
+  attr_accessor :postal_code, :shipping_area_id, :municipality, :address, :building_name, :phone_number, :item_id, :user_id, :token
 
   # ここにバリデーションの処理を書く
   with_options presence: true do
