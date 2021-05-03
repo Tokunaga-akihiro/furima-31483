@@ -5,13 +5,13 @@ class Order
   # ここにバリデーションの処理を書く
   with_options presence: true do
   validates :postal_code, format: {with: /\A\d{3}[-]\d{4}\z/}
-  validates :shipping_area_id
+  validates :shipping_area_id, numericality: { other_than: 0 }
   validates :municipality
   validates :address
-  validates :phone_number, format: {with: /\A\d{11}\z/}
-
-  # validates_format_of :postal_code,  with:  /\A\d{3}[-]\d{4}\z/
-  # validates_format_of :phone_number, with:  /\A\d{11}\z/
+  validates :phone_number, format: {with: /\A\d{,11}\z/}
+  validates :user_id
+  validates :item_id
+  validates :token
   end
 
   def save

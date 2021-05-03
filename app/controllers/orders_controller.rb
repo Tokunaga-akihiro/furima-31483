@@ -7,10 +7,6 @@ before_action :sold_out
     # @item = Item.new
      @order = Order.new
   end
-
-  # def new
-  #   @order = Order.new
-  # end
  
   def create
     @order = Order.new(order_params)
@@ -37,10 +33,6 @@ before_action :sold_out
     def order_item
       @item = Item.find(params[:item_id])
     end
-
-    # def order_user
-    #     @user = current_user.id
-    # end
 
     def different
       if  @item.user_id == current_user.id
