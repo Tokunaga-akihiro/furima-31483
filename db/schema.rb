@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 2021_04_24_121716) do
     t.integer "shipping_area_id", null: false
     t.string "municipality", default: "", null: false
     t.string "address", default: "", null: false
-    t.string "building_name", default: "", null: false
+    t.string "building_name"
     t.string "phone_number", default: "", null: false
-    t.bigint "purchase_record_id"
+    t.bigint "purchase_record_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["purchase_record_id"], name: "index_profiles_on_purchase_record_id"

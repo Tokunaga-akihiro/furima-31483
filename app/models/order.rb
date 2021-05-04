@@ -16,7 +16,7 @@ class Order
 
   def save
   # 各テーブルにデータを保存する処理を書く
-     Profile.create(postal_code: postal_code, shipping_area_id: shipping_area_id, municipality: municipality, address: address, building_name: building_name)
-     PurchaseRecord.create(item_id: item_id, user_id: user_id)
+    purchase_record = PurchaseRecord.create(item_id: item_id, user_id: user_id)
+    Profile.create(postal_code: postal_code, shipping_area_id: shipping_area_id, municipality: municipality, address: address, building_name: building_name, phone_number: phone_number, purchase_record_id: purchase_record.id)
   end
 end
