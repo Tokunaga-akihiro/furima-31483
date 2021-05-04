@@ -1,4 +1,4 @@
-FactoryBot.define do
+ FactoryBot.define do
   factory :item do
     category_id {2}
     status_id {2}
