@@ -5,7 +5,7 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.integer     :shipping_area_id,          null: false
       t.string      :municipality,              null: false, default: ""
       t.string      :address,                   null: false, default: ""
-      t.string      :building_name,             null: false, default: ""
+      t.string      :building_name,             
       t.string      :phone_number,              null: false, default: ""
       t.references  :purchase_record,           foreign_key: true
       t.timestamps
